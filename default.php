@@ -52,7 +52,7 @@
 			
 			<nav id="navbar" class="nav-menu navbar">
 				<ul>
-					<li><a href="newIndex.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+					<li><a href="default.php" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
 					<li><a href="about.php" class="nav-link scrollto"><i class="bx bx-bus-school"></i> <span>About</span></a></li>
 					<li><a href="school.php" class="nav-link scrollto"><i class="bx bx-user"></i> <span>School</span></a></li>
 					<li><a href="hobbies.php" class="nav-link scrollto"><i class="bx bx-hard-hat"></i> <span>Hobbies</span></a></li>
