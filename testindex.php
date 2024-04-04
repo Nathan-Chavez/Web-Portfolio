@@ -238,11 +238,6 @@
 
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-				  <h4>Location:</h4>
-				  <p>1 UTSA Circle, San Antonio, TX 78249</p>
-              </div>
 
               <div class="email">
                 <i class="bi bi-envelope"></i>
