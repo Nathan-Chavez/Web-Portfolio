@@ -449,43 +449,82 @@
               </div>
 
               
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6939.364137507554!2d-98.62451!3d29.5838525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c667dd6657fdd%3A0x24e55c903c3a270c!2sThe%20University%20of%20Texas%20at%20San%20Antonio!5e0!3m2!1sen!2sus!4v1678850051274!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6939.364137507554!2d-98.62451!3d29.5838525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c667dd6657fdd%3A0x24e55c903c3a270c!2sThe%20University%20of%20Texas%20at%20San%20Antonio!5e0!3m2!1sen!2sus!4v1678850051274!5m2!1sen!2sus"  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
-
+	
           </div>
-		  <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-			<?php
-				echo '<form action="forms/contact.php" method="post" role="form" class="php-email-form">';
+		<?php
+			ini_set('display_errors', 1);
+			ini_set('display_startup_errors', 1);
+			error_reporting(E_ALL);
+			
+			echo '<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">';
+			if(!isset($_POST['submit']))
+			{
+				
+				echo '<form action="#contact" method="post" role="form" class="php-email-form">';
 				echo '<div class="row">';
 				echo '<div class="form-group col-md-6">';
-			  	echo '<label for="name">Your Name</label>';
-				echo '<input type="text" name="name" class="form-control" id="name" required>';
+				echo '<label for="firstname">First Name</label>';
+				echo '<input type="text" name="firstname" class="form-control" required>';
 				echo '</div>';
 				echo '<div class="form-group col-md-6">';
-				echo '<label for="name">Your Email</label>';
-				echo '<input type="email" class="form-control" name="email" id="email" required>';
+				echo '<label for="lastname">Last Name</label>';
+				echo '<input type="text" class="form-control" name="lastname" required>';
 				echo '</div>';
+				echo '<div class="row">';
+				echo '<div class="form-group col-md-6">';
+				echo '<label for="email">Email</label>';
+				echo '<input type="text" name="email" class="form-control"  required>';
+				echo '</div>';
+				echo '<div class="form-group col-md-6">';
+				echo '<label for="phone">Phone Number</label>';
+				echo '<input type="text" name="phone" class="form-control"  required>';
 				echo '</div>';
 				echo '</div>';
 				echo '<div class="form-group">';
-				echo '<label for="name">Subject</label>';
-				echo '<input type="text" class="form-control" name="subject" id="subject" required>';
+				echo '<label for="comments">Comments</label>';
+				echo '<textarea class="form-control" name="comments" rows="10" required></textarea>';
 				echo '</div>';
-				echo '<div class="form-group">';
-				echo '<label for="name">Message</label>';
-				echo '<textarea class="form-control" name="message" rows="10" required></textarea>';
+				
+				echo '<button type="submit" name="submit" value="submit">Submit</button>';
 				echo '</div>';
-				echo '<div class="my-3">';
-				echo '<div class="loading">Loading</div>';
-				echo '<div class="error-message"></div>';
-				echo '<div class="sent-message">Your message has been sent. Thank you!</div>';
-				echo '</div>';
-				echo '<div class="text-center"><button type="submit">Send Message</button></div>';
 				echo '</form>';
+			}
+			if(isset($_POST['submit']))
+			{
+				$firstname=addslashes($_POST['firstname']);
+				$lastname=addslashes($_POST['lastname']);
+				$email=addslashes($_POST['email']);
+				$phone=addslashes($_POST['phone']);
+				$comments=addslashes($_POST['comments']);
+				//Database connection Parameters
+				$un="webuser";
+				$pw="]b.kWaCZQ3kG9!_9";
+				$host="localhost";
+				$db="contact_data";			
+				//Create new mysql connection
+				$dblink=new mysqli($host,$un,$pw,$db);
+				echo '<form action="" method="post" role="form" class="php-email-form">';
+				echo '<h3>Data Received</h3>';
+				echo "<p>First Name: $firstname</p>";
+				echo "<p>Last Name: $lastname</p>";
+				echo "<p>Email: $email</p>";
+				echo "<p>Phone: $phone</p>";
+				echo "<p>Comments: $comments</p>";
+				
+				$sql="Insert into `entries` (`first_name`,`last_name`,`email`,`phone`,`comments`) values('$firstname','$lastname','$email','$phone','$comments')";
+				$dblink->query($sql) or
+					die("<p>Something went wrong with: $sql<br>".$dblink->error);
+				echo '<h3>Data entered into database successfully!</h3>';
+				//echo "<button type='button' onclick='location.href'=results.php>Go to Results Page</button>";
+				echo '<button type="button" onclick="location.href=\'results.php\'">Go to Results Page</button>';
+				echo '</form>';
+				
+			}
+			echo '</div>';
+		?>
 
-			  
-			?>
-		</div>
         </div>
 
       </div>
