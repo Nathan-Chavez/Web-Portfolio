@@ -133,7 +133,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script src="script.js"></script>
 
 </body>
 
