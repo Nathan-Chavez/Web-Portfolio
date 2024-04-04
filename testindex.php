@@ -250,9 +250,6 @@
                 <h4>Call:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
-
-              
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6939.364137507554!2d-98.62451!3d29.5838525!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x865c667dd6657fdd%3A0x24e55c903c3a270c!2sThe%20University%20of%20Texas%20at%20San%20Antonio!5e0!3m2!1sen!2sus!4v1678850051274!5m2!1sen!2sus"  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
 	
           </div>
