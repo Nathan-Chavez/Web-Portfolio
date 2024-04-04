@@ -84,7 +84,7 @@ h6 {
 }
 
 #header .navbar {
-  display: flex;
+  display: flex; /* Change to flex to display items horizontally */
   align-items: center;
 }
 
@@ -92,6 +92,7 @@ h6 {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex; /* Add flex to display items horizontally */
 }
 
 #header .navbar ul li {
@@ -109,20 +110,6 @@ h6 {
 #header .navbar ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-}
-
-#main {
-  margin-left: 300px;
-}
-
-@media (max-width: 1199px) {
-  #header {
-    left: -300px;
-  }
-
-  #main {
-    margin-left: 0;
-  }
 }
 
 /*--------------------------------------------------------------
