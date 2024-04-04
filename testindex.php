@@ -242,18 +242,17 @@
               <div class="email">
                 <i class="bi bi-envelope"></i>
                 <h4>Email:</h4>
-                <p>nathan.chavez@my.utsa.edu</p>
+                <p>nathanchavezpromail@gmail.com</p>
               </div>
 
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Call:</h4>
-                <p>+1 5589 55488 55s</p>
+                <p>210 430 5438</p>
               </div>
             </div>
-	
-          </div>
-		<?php
+
+            <?php
 			ini_set('display_errors', 1);
 			ini_set('display_startup_errors', 1);
 			error_reporting(E_ALL);
@@ -324,6 +323,8 @@
 			}
 			echo '</div>';
 		?>
+          </div>
+		
 
         </div>
 
