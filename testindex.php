@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style copy.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio - v3.10.0
@@ -41,26 +41,20 @@
   <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
 
   <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="d-flex flex-column">
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
 
-      <div class="profile">
-        <!-- <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle"> --->
-        <h1 class="text-light"><a href="index.html">Nathan Chavez</a></h1>
-        <div class="social-links mt-3 text-center">
-          <a href="https://www.linkedin.com/in/nathan-e-chavez/" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-      </div>
+      <h1 class="logo"><a href="index.html">iPortfolio</a></h1>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-		  <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>School</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Work</span></a></li>
-          <li><a href="#school" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Hobbies</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#resume">Work</a></li>
+          <li><a class="nav-link scrollto" href="#school">Hobbies</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .nav-menu -->
     </div>
   </header><!-- End Header -->
