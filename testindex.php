@@ -250,79 +250,85 @@
                 <h4>Call:</h4>
                 <p>210 430 5438</p>
               </div>
+
+              <div>
+                <?php
+                    ini_set('display_errors', 1);
+                    ini_set('display_startup_errors', 1);
+                    error_reporting(E_ALL);
+                    
+                    echo '<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">';
+                    if(!isset($_POST['submit']))
+                    {
+                      
+                      echo '<form action="#contact" method="post" role="form" class="php-email-form">';
+                      echo '<div class="row">';
+                      echo '<div class="form-group col-md-6">';
+                      echo '<label for="firstname">First Name</label>';
+                      echo '<input type="text" name="firstname" class="form-control" required>';
+                      echo '</div>';
+                      echo '<div class="form-group col-md-6">';
+                      echo '<label for="lastname">Last Name</label>';
+                      echo '<input type="text" class="form-control" name="lastname" required>';
+                      echo '</div>';
+                      echo '<div class="row">';
+                      echo '<div class="form-group col-md-6">';
+                      echo '<label for="email">Email</label>';
+                      echo '<input type="text" name="email" class="form-control"  required>';
+                      echo '</div>';
+                      echo '<div class="form-group col-md-6">';
+                      echo '<label for="phone">Phone Number</label>';
+                      echo '<input type="text" name="phone" class="form-control"  required>';
+                      echo '</div>';
+                      echo '</div>';
+                      echo '<div class="form-group">';
+                      echo '<label for="comments">Comments</label>';
+                      echo '<textarea class="form-control" name="comments" rows="10" required></textarea>';
+                      echo '</div>';
+                      
+                      echo '<button type="submit" name="submit" value="submit">Submit</button>';
+                      echo '</div>';
+                      echo '</form>';
+                    }
+                    if(isset($_POST['submit']))
+                    {
+                      $firstname=addslashes($_POST['firstname']);
+                      $lastname=addslashes($_POST['lastname']);
+                      $email=addslashes($_POST['email']);
+                      $phone=addslashes($_POST['phone']);
+                      $comments=addslashes($_POST['comments']);
+                      //Database connection Parameters
+                      $un="webuser";
+                      $pw="]b.kWaCZQ3kG9!_9";
+                      $host="localhost";
+                      $db="contact_data";			
+                      //Create new mysql connection
+                      $dblink=new mysqli($host,$un,$pw,$db);
+                      echo '<form action="" method="post" role="form" class="php-email-form">';
+                      echo '<h3>Data Received</h3>';
+                      echo "<p>First Name: $firstname</p>";
+                      echo "<p>Last Name: $lastname</p>";
+                      echo "<p>Email: $email</p>";
+                      echo "<p>Phone: $phone</p>";
+                      echo "<p>Comments: $comments</p>";
+                      
+                      $sql="Insert into `entries` (`first_name`,`last_name`,`email`,`phone`,`comments`) values('$firstname','$lastname','$email','$phone','$comments')";
+                      $dblink->query($sql) or
+                        die("<p>Something went wrong with: $sql<br>".$dblink->error);
+                      echo '<h3>Data entered into database successfully!</h3>';
+                      //echo "<button type='button' onclick='location.href'=results.php>Go to Results Page</button>";
+                      echo '<button type="button" onclick="location.href=\'results.php\'">Go to Results Page</button>';
+                      echo '</form>';
+                      
+                    }
+                    echo '</div>';
+                  ?>
+              </div>
+
+              
             </div>
 
-            <?php
-			ini_set('display_errors', 1);
-			ini_set('display_startup_errors', 1);
-			error_reporting(E_ALL);
-			
-			echo '<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">';
-			if(!isset($_POST['submit']))
-			{
-				
-				echo '<form action="#contact" method="post" role="form" class="php-email-form">';
-				echo '<div class="row">';
-				echo '<div class="form-group col-md-6">';
-				echo '<label for="firstname">First Name</label>';
-				echo '<input type="text" name="firstname" class="form-control" required>';
-				echo '</div>';
-				echo '<div class="form-group col-md-6">';
-				echo '<label for="lastname">Last Name</label>';
-				echo '<input type="text" class="form-control" name="lastname" required>';
-				echo '</div>';
-				echo '<div class="row">';
-				echo '<div class="form-group col-md-6">';
-				echo '<label for="email">Email</label>';
-				echo '<input type="text" name="email" class="form-control"  required>';
-				echo '</div>';
-				echo '<div class="form-group col-md-6">';
-				echo '<label for="phone">Phone Number</label>';
-				echo '<input type="text" name="phone" class="form-control"  required>';
-				echo '</div>';
-				echo '</div>';
-				echo '<div class="form-group">';
-				echo '<label for="comments">Comments</label>';
-				echo '<textarea class="form-control" name="comments" rows="10" required></textarea>';
-				echo '</div>';
-				
-				echo '<button type="submit" name="submit" value="submit">Submit</button>';
-				echo '</div>';
-				echo '</form>';
-			}
-			if(isset($_POST['submit']))
-			{
-				$firstname=addslashes($_POST['firstname']);
-				$lastname=addslashes($_POST['lastname']);
-				$email=addslashes($_POST['email']);
-				$phone=addslashes($_POST['phone']);
-				$comments=addslashes($_POST['comments']);
-				//Database connection Parameters
-				$un="webuser";
-				$pw="]b.kWaCZQ3kG9!_9";
-				$host="localhost";
-				$db="contact_data";			
-				//Create new mysql connection
-				$dblink=new mysqli($host,$un,$pw,$db);
-				echo '<form action="" method="post" role="form" class="php-email-form">';
-				echo '<h3>Data Received</h3>';
-				echo "<p>First Name: $firstname</p>";
-				echo "<p>Last Name: $lastname</p>";
-				echo "<p>Email: $email</p>";
-				echo "<p>Phone: $phone</p>";
-				echo "<p>Comments: $comments</p>";
-				
-				$sql="Insert into `entries` (`first_name`,`last_name`,`email`,`phone`,`comments`) values('$firstname','$lastname','$email','$phone','$comments')";
-				$dblink->query($sql) or
-					die("<p>Something went wrong with: $sql<br>".$dblink->error);
-				echo '<h3>Data entered into database successfully!</h3>';
-				//echo "<button type='button' onclick='location.href'=results.php>Go to Results Page</button>";
-				echo '<button type="button" onclick="location.href=\'results.php\'">Go to Results Page</button>';
-				echo '</form>';
-				
-			}
-			echo '</div>';
-		?>
+            
           </div>
 		
 
