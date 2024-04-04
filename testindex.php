@@ -25,7 +25,7 @@
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/style copy.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio - v3.10.0
@@ -42,7 +42,7 @@
 
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
+    <div class="container d-flex align-items-center">
 
       <div class="profile">
         <!-- <img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle"> 
@@ -52,7 +52,7 @@
         </div>
       </div>
 
-      <nav id="navbar" class="nav-menu navbar">
+      <nav id="navbar" class="nav-menu d-none d-lg-block">
         <ul>
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
